@@ -6,20 +6,7 @@ Modern data lakes hold vast collections of multimodal data, and retrieving the t
 
 **RAP-STOP** (Reliable LAnguage model Powered Semantic Top-𝑘 OPerator) bridges this gap by harnessing LLMs 🤖 for semantic ranking while mitigating their hallucination issues to deliver **reliable**, **efficient**, and **robust** top-𝑘 retrieval.
 
-This repository provides a demo implementation of the associated research paper, demonstrating the recognition and ranking of individuals’ ages based on their images. 📊
-
-You can also apply this approach to any other top-k or ranking task you wish! 🎉
-
-------
-
-## 🏆 Why RAP-STOP?
-
-- **🔍 Hallucination Debugging**: Employs Monte Carlo Tree Search (MCTS) to identify and correct structural inconsistencies before ranking.
-- **🎯 Credibility-Aware Ranking**: A learnable attention mechanism dynamically weights evidence, reducing hallucinated noise.
-- **⚡ Enhanced Accuracy**: Achieves over 100% improvement compared to non-learning baselines (PageRank, nDegree, Copeland).
-- **⏱️ Cost & Time Efficiency**: Delivers ≥90% human-level accuracy at under 0.1% of the time and cost of crowd-sourced labeling.
-- **💰 Budget-Friendly LLMs**: Supports free or low-cost models (<$0.14 per million tokens), with seamless integration for premium models.
-
+This repository is just a demo version.
 
 ------
 
@@ -28,18 +15,18 @@ You can also apply this approach to any other top-k or ranking task you wish! �
 ```
 .
 ├── data/
-│   ├── sorting_target/           # 📸 Original topk target images (ages: 20, 27, 69, 85)
-│   ├── evidenceMatrix.npy        # 🗳️ Original evidence matrix
-│   ├── evidenceMatrix_debug.npy  # 🛠️ Matrix debugged via MCTS
-│   └── realOrder.npy             # ✔️ Ground-truth ordering matrix
-├── E2E_topk_experiment/          # ⚙️ End-to-end training and evaluation
-│   ├── train_topk_operator.py    # 🏋️ Trains the AttentionSorter model
-│   └── evaluate_topk_operator.py # 📊 Evaluates ranking accuracy
-├── MCTS/                         # 🌲 Monte Carlo Tree Search utilities
-│   ├── mcts/                     # 🧩 Core MCTS modules
-│   └── mcts_debug.py             # 🔧 Debugs evidenceMatrix.npy
-├── models/                       # 🧠 Saved AttentionSorter checkpoints
-└── README.md                     # 📖 This file
+│   ├── sorting_target/           # Original topk target images (ages: 20, 27, 69, 85)
+│   ├── evidenceMatrix.npy        # Original evidence matrix
+│   ├── evidenceMatrix_debug.npy  # Matrix debugged via MCTS
+│   └── realOrder.npy             # Ground-truth ordering matrix
+├── E2E_topk_experiment/          # End-to-end training and evaluation
+│   ├── train_topk_operator.py    # Trains the AttentionSorter model
+│   └── evaluate_topk_operator.py # Evaluates ranking accuracy
+├── MCTS/                         # Monte Carlo Tree Search utilities
+│   ├── mcts/                     # Core MCTS modules
+│   └── mcts_debug.py             # Debugs evidenceMatrix.npy
+├── models/                       # Saved AttentionSorter checkpoints
+└── README.md                     # This file
 ```
 
 ------
@@ -50,7 +37,7 @@ You can also apply this approach to any other top-k or ranking task you wish! �
 - **NumPy**: 2.0.1
 - **PyTorch**: 2.4.0
 - **CUDA Toolkit**: ≥11.8
-
+- **vscode**: optional
 
 ------
 
@@ -93,23 +80,13 @@ This step resolves hallucination conflicts and outputs `evidenceMatrix_debug.npy
 
 ------
 
-## 📈 Results & Impact
+## 📈 Result Preview:
 
 Using **RAP-STOP**, we demonstrate:
-- **🔥 Over 100% accuracy improvement** compared to non-learning baselines.
+- **🔥 Over 100% accuracy improvement** compared to non-learning baselines.(e.g., PageRank,Indegree,Copeland,BRE,Borda and so on)
 - **💪 ≥90% human-level performance** at <0.1% of time and cost.
 - **⚙️ Seamless integration with existing LLMs** at minimal expense.
 
 ------
-
-### 🧙 What it does:
-
-- 🕵️ **Hallucination Error Detection**: Identifies and corrects structural inconsistencies in LLM-generated evidence through Monte Carlo Tree Search (MCTS)
-- ⚖️ **Dynamic Evidence Weighting**: Utilizes a learnable attention mechanism to dynamically weight evidence, minimizing the impact of hallucinated noise
-- 🌐 **Cross-Modal Ranking**: Handles multimodal data (text/image/numerical and more) through isomorphic partial order representation
-- 🚀 **Massive Parallel Comparisons**: Executes up to 10^4 pairwise LLM queries per minute via concurrent API calls
-- 🧠 **Zero-Shot Transfer Learning**: Trains on synthetic data then transfers ranking capability to unseen domains
-
-
-------
-Ready to supercharge your multimodal top-κ retrieval? Let **RAP-STOP** handle the heavy lifting! ⚡🔍
+Ready to supercharge your multimodal top-κ retrieval? 
+Get ready for the highly anticipated release of the **official paper** and **official code repository**!
