@@ -4,18 +4,18 @@
 
 Modern data lakes hold vast collections of multimodal data, and retrieving the top-𝑘 most relevant items across both structured and unstructured formats is crucial yet difficult. Traditional weighted-sum approaches lack true semantic understanding, and ML-based rankers require extensive labeled data—human experts remain the gold standard, but are expensive and slow.
 
-**RAP-STOP** (Reliable LAnguage model Powered Semantic Top-𝑘 OPerator) bridges this gap by harnessing LLMs 🤖 for semantic ranking while mitigating their hallucination issues to deliver **reliable**, **efficient**, and **robust** top-𝑘 retrieval.
+**RAP-STOP** (Reliable LAnguage model Powered Semantic Top-𝑘 OPerator) bridges this gap by harnessing LLMs 🤖 for semantic ranking while mitigating their hallucination issues to deliver reliable, efficient, and robust top-𝑘 retrieval.
 
-This repository is just a demo version.
+**This repository is just a demo version.**
 
 ------
 
-## 🗂️ Project Structure
+## 🗂️ Code Structure
 
 ```
 .
 ├── data/
-│   ├── sorting_target/           # Original topk target images (ages: 20, 27, 69, 85)
+│   ├── sorting_target/           # Original topk target images
 │   ├── evidenceMatrix.npy        # Original evidence matrix
 │   ├── evidenceMatrix_debug.npy  # Matrix debugged via MCTS
 │   └── realOrder.npy             # Ground-truth ordering matrix
@@ -82,7 +82,7 @@ This step resolves hallucination conflicts and outputs `evidenceMatrix_debug.npy
 
 ## 📈 Result Preview:
 
-Using **RAP-STOP**, we demonstrate:
+Using **RAP-STOP**, we will demonstrate:
 - **🔥 Over 100% accuracy improvement** compared to non-learning baselines.(e.g., PageRank,Indegree,Copeland,BRE,Borda and so on)
 - **💪 ≥90% human-level performance** at <0.1% of time and cost.
 - **⚙️ Seamless integration with existing LLMs** at minimal expense.
